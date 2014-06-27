@@ -1,0 +1,24 @@
+[yjsgnote color="blue" close="no" title="Requirement" border="default" radius="radiusb5" icon="fa fa-info-circle fa-lg"]
+<p>
+	Please note that extending Yjsg shortcode function requires extended knowledge of PHP, Javascript, HTML and CSS.
+</p>
+[/yjsgnote] <br/>
+<p>
+	YJSG v2 is completely modular and gives you a chance to extend each part of it as well as built in Yjsg shortcodes. If you look in <code>site_root/templates/eximium/custom/yjsgshortcodes/</code> folder you will find extended shortcode example for link shortcode.
+</p>
+<p>
+	Please use these files as a template for extending Yjsg shortcode function.<br/>The simple way is to keep on adding own shortcodes to existing <code>$shortcodes</code> array inside the <code>yjsg_shortcode.php</code> file and build additional case for your shortcode inside the <code>yjsg_shortcodes_replace.php</code> file.
+</p>
+<br/>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/customshortcode1.png" alt="customshortcode1">
+	</span>
+</p>
+<h3 class="yjsg-sub-heading">link shortcode example:</h3>
+<br/>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/customshortcode.png" alt="customshortcode">
+	</span>
+</p>
