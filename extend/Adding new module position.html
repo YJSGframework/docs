@@ -1,1 +1,58 @@
-Adding new module position
+<h2>Step 1 - Prepare the field</h2>
+<p>
+	You should first decide where to add your new module position. Open template <code>index.php</code> and try to find a suitable place for your new module. For example under the main menu.
+</p>
+<h2>Step 2 - Add the code snippet in index.php</h2>
+Please add following code snippet in previously determined space: <br>
+<br>
+[yjsgpre pretty="1" scroll="0"]
+<jdoc:include type="modules" name="newposition" style="YJsgxhtml" />
+[/yjsgpre]<br/>
+<h3 class="yjsg-sub-heading">module print attributes</h3>
+<ul>
+	<li>
+		<strong>name=</strong> module position name. </li>
+	<li>
+		<strong>style=</strong> module chrome output which can be , <code>YJsgxhtml</code> ,<code>Yjround</code>, <code>YJsgplain</code>. </li>
+</ul>
+<br/>
+<h2>Step 3 - Add new module position to your templateDetails.xml file</h2>
+Under this line in <code>templateDetails.xml</code> : <br>
+<br>
+[yjsgpre pretty="1" scroll="0"]
+<position>user25</position>
+[/yjsgpre]<br>
+Add this xml snippet: <br>
+<br>
+[yjsgpre pretty="1" scroll="0"]
+<position>newposition</position>
+[/yjsgpre] <br>
+<h3 class="yjsg-sub-heading">YJsgxhtml module chrome output:</h3>
+[yjsgpre pretty="1" scroll="0"]
+<div class="yjsquare modidMODULEID">
+	<div class="h2_holder">
+		<h2 class="module_title"> Title </h2>
+	</div>
+	<div class="yjsquare_in"> module content... </div>
+</div>
+[/yjsgpre] <br/>
+<p>
+	Note that a space in module title will split your title and each part will be surrounded by a span.<br/>
+	This way you can additionally style the separated title.
+</p>
+<h3 class="yjsg-sub-heading">YJsground module chrome output:</h3>
+[yjsgpre pretty="1" scroll="0"]
+<div class="yjsquare modidMODULEID addround">
+	<div class="h2_holder">
+		<h2 class="module_title">
+			<span class="title_split titlesplit0">Module</span>
+			<span class="title_split titlesplit1">Title</span>
+		</h2>
+	</div>
+	<div class="yjsquare_in"> module content... </div>
+</div>
+[/yjsgpre]<br/>
+<h3 class="yjsg-sub-heading">YJsgplain module chrome output:</h3>
+[yjsgpre pretty="1" scroll="0"]
+<div class="yjplain modidMODULEID"> module content... </div>
+[/yjsgpre] 

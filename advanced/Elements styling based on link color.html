@@ -1,1 +1,52 @@
-Elements styling based on link color
+<p>
+	YJSG comes useful feature for dynamic color styling. PHP class <code>Yjsgcolor</code> can help you style any of your HTML elements based<br/>on style link color.
+</p>
+<h3 class="yjsg-sub-heading">Yjsgcolor class methods that you can use:</h3>
+<ul>
+	<li><code>$yjsg_color-&gt;darker('percentage')</code> = makes the color darker based on the link color.</li>
+	<li><code>$yjsg_color-&gt;lighter('percentage')</code> = makes the color lighter based on the link color.</li>
+</ul>
+<br>
+<h2> Usage </h2>
+<p>
+	To make it easier for you we have already created <code>$cc_css</code> variable that you can use to define your multiple elements.<br>
+	If you open <code>site_root/templates/template_name/custom/template_custom_params.php</code><br>
+	you will see this variable defined with one or more elements inside :
+</p>
+<br>
+[yjsgpre pretty="1" scroll="0"]
+$cc_css ="a{color:".$style_color.";}";
+[/yjsgpre]
+<p>
+	You can simply add more elements and either use your style default link color for them <code>$style_color</code> or you can extend it with<br>
+	<code>$yjsg_color-&gt;darker('percentage')</code> or <code>$yjsg_color-&gt;lighter('percentage')</code> methods.<br>
+	If you open Eximium template <code>template_custom_params.php</code> file you will find <code>$cc_css</code> variable populated with few css class names that are affected once you change default style links color:
+</p>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/colorstyling2.png" alt="colorstyling2">
+	</span>
+</p>
+<p>
+	As you can see we used default link color to style some of our elements. This can be further extended to use custom color for other elements based on link color.
+<br>
+<br>
+[yjsgnote color="red" close="no" title="What file can I edit?" border="default" radius="0" icon="fa fa-info-circle fa-lg"]
+<p>
+	Please do not edit or change <code>template_custom_params.php</code> file directly. This file is used for each template differently and it might be changed on template update. You can use <code>yjsg_custom_params.php</code> file instead.  Just copy the variables or params from <code>template_custom_params.php</code> to <code>yjsg_custom_params.php</code> and extend them.
+</p>
+[/yjsgnote]
+<br>
+<p>
+	If you were wondering where the <code>$style_color</code> variable comes from, this would be your selected stylesheet link color that you can find in template manager under the tab <b>Style</b>.
+</p>
+<p>
+	After you have declared all elements that you would like to style based on link color you can change default color code for your stylesheet within your template manager and all elements defined within <code>$cc_css</code> variable will be changed and adapted based on this param.
+</p>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/colorstyling.png" alt="colorstyling">
+	</span>
+</p>

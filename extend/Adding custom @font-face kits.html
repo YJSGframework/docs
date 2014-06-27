@@ -1,1 +1,136 @@
-Adding custom @font-face kits
+<h2>Better web fonts with @font-face </h2>
+<p>
+	Since
+	<a href="http://www.w3.org/TR/CSS21/" target="_blank">
+		CSS2
+	</a>
+	we had the opportunity to take advantage of
+	<a href="http://www.w3schools.com/cssref/css3_pr_font-face_rule.asp" target="_blank">
+		@font-face
+	</a>
+	and use custom font types for our web applications. Rather than being limited to
+	<a href="http://en.wikipedia.org/wiki/Core_fonts_for_the_Web" target="_blank">
+		default web fonts
+	</a>
+	we now can use our own font-family and style the web how we like it. With simple inclusion of few CSS parameters the magic happens:
+</p>
+<h3 class="yjsg-sub-heading">markup:</h3>
+[yjsgpre pretty="1" scroll="0"]
+@font-face {
+font-family: 'PacificoRegular';
+src: url('Pacifico-webfont.eot');
+src: url('Pacifico-webfont.eot?#iefix') format('embedded-opentype'),
+	 url('Pacifico-webfont.woff') format('woff'),
+	 url('Pacifico-webfont.ttf') format('truetype'),
+	 url('Pacifico-webfont.svg#PacificoRegular') format('svg');
+font-weight: normal;
+font-style: normal;
+
+}
+h1,h2,h3,h4,h5,h6{
+font-weight:normal;
+font-family:'PacificoRegular', Arial, sans-serif;
+}
+[/yjsgpre]<br>
+<p>
+	and you can turn your font style from:
+</p>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/fontface1.png" alt="fontface1">
+	</span>
+</p>
+<br>
+<p>
+	in to something more stylish like:
+</p>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/fontface2.png" alt="fontface2">
+	</span>
+</p>
+<br>
+<h2>Using FoontSquirrel @font-face kits in YJSG based templates</h2>
+<br>
+<p>
+	As you can see above , the process is simple but instead of looking for or creating web font files you can use free service provided by
+	<a href="http://www.fontsquirrel.como" target="_blank">
+		FoontSquirrel
+	</a>
+	which will let you download or generate @font-face kits and use them as they are in your YJSG based templates. For demonstration purpose please go to
+	<a href="http://www.fontsquirrel.com/fonts/pacifico" target="_blank">
+		Pacifico @font-face kit
+	</a>
+	click on @font-face Kit above the specimen and than click on the big blue button that says Download @font-face Kit.
+</p>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/fontface3.png" alt="fontface3">
+	</span>
+</p>
+<br>
+<p>
+	Since we are using
+	<a href="http://www.wampserver.com/en/" target="_blank">
+		wamp
+	</a>
+	we will download the zip file to <code>site_root/templates/yjsg_template_name/css/fontfacekits</code> folder. If you are doing this on a live server , download the zip, extract it to its own folder and upload that folder to the path mentioned above. For your convinience YouGrids template is deliveered with PTSansNarrowBold @font-face kit:
+</p>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/fontface4.png" alt="fontface4">
+	</span>
+</p>
+<br>
+<p>
+	Right click on the pacifico-fontfacekit.zip file and extract to its own folder:
+</p>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/fontface5.png" alt="fontface5">
+	</span>
+</p>
+<br>
+<p>
+	Go to your template manager, tab name <span class="label label-info">Style</span> and activate following parameters:
+</p>
+<ul>
+	<li>Use Element Tags font override set to <b>Yes</b></li>
+	<li>Element tag override type select <b>@font-face kit</b></li>
+	<li>From @font-face Kit Font-Family select, choose your newly created @font-face kit folder which in our case is <b>pacifico-fontfacekit</b></li>
+</ul><br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/fontface6.png" alt="fontface6">
+	</span>
+</p>
+<br>
+<br>
+<h2>Add custom style declarations </h2>
+<p>
+	Since @font-face usage sometimes requires you to change font size , font weight or other font attributes , we have disabled <b>Affected selectors param</b> in template admin if you select @font-face kit as your elements tag override, and you should add all your declarations to<br>
+	<code>site_root/templates/yjsg_template_name/css/fontfacekits/your_font_face_kit/stylesheet.css</code> file.<br>
+	<br>
+	Please make sure that the css file in your @font-face kit folder is always named as <code>stylesheet.css</code> and that you <span class="label label-important">don't have any space </span> in your @font-face kit folder name.
+	<br>
+	Now open the <code>stylsheet.css</code> file and add this code to change font-family for <span class="label label-info">headings , article title, module title and component name</span>:
+</p>
+<br>
+[yjsgpre pretty="1" scroll="0"]
+h1,h2,h3,h4,h5,h6,.article_title,.module_title,.pagetitle{
+font-weight:normal;
+font-family:'PacificoRegular', Arial, sans-serif;
+}
+[/yjsgpre]
+<p>
+	your output should be this:
+</p>
+<h3 class="yjsg-sub-heading">example:</h3>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/fontface2.png" alt="fontface2">
+	</span>
+</p>

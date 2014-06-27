@@ -1,0 +1,20 @@
+<p>
+YJSG comes with few page class names applied to the <code>html</code> element. You can use those class names to style your page differently.
+</p>
+<h3 class="yjsg-sub-heading">example:</h3>
+[yjsgpre pretty="1" scroll="0"]
+<html xml:lang="en-gb" lang="en-gb"  dir="ltr" class="bootstrapoff itemid-352 com_content view-article">
+[/yjsgpre] <br>
+<h3 class="yjsg-sub-heading">available class names:</h3>
+<ul>
+<li><b>bootstrapoff:</b> depending on bootstrap version set in template manager, this class changes to, bootstrapoff, bootstrap2, bootstrap3.</li>
+<li><b>itemid:</b> itemid class comes from your menu item id and is specific to each Joomla page. If you are on frontpage this class changes to <code>homepage</code>.</li>
+<li><b>com:</b> this class is specific for each Joomla extension page. On this page it is <code>com_content</code>.</li>
+<li><b>view:</b> this class is specific for each Joomla extension view page. On this page it is <code>view-article</code>.</li>
+</ul>
+<h3 class="yjsg-sub-heading">to change article title font size on this specific page we would use:</h3>
+[yjsgpre pretty="1" scroll="0"]
+html.itemid-352 .article_title{
+	font-size:50px;
+}
+[/yjsgpre]

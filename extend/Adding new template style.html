@@ -1,1 +1,121 @@
-Adding new template style
+<h2> Step 1 - add style name to template-settings.xml</h2>
+<p>
+	Open <code>site_root/templates/template_name/template-settings.xml</code> file and find variable name <code>yjsg_get_styles</code>
+</p>
+<h3 class="yjsg-sub-heading">markup:</h3>
+[yjsgpre pretty="1" scroll="0"]
+<field name="yjsg_get_styles" type="yjsglist" default="blue|40b1e2" label="YJSG_COLOR_LABEL" description="YJSG_COLOR_DESC" yjsgstyles="blue==40b1e2">
+	<option value="blue|40b1e2">Blue</option>
+</field>
+[/yjsgpre]<br/>
+[yjsgnote color="blue" close="no" title="Field attributes" border="default" radius="radiusb5" icon="fa fa-info-circle fa-lg"]
+<p>
+	The <code>yjsg_get_styles</code> field name attributes are important and they control the styleswitcher as well as logo,color picker and style params in template manager. The values in attributes are separated by <code>|</code> or <code>==</code> and you need to pay close attention to them.
+</p>
+[/yjsgnote] <br>
+<h3 class="yjsg-sub-heading">yjsg_get_styles field name attributes:</h3>
+<ul>
+	<li>
+		<strong>name</strong>: variable that contains style information. </li>
+	<li>
+		<strong>type</strong>: yjsglist element type. </li>
+	<li>
+		<strong>default</strong>: default select color style and its link color. </li>
+	<li>
+		<strong>label</strong>: element label for template manager </li>
+	<li>
+		<strong>description</strong>: element description for template manager. </li>
+	<li>
+		<strong>yjsgstyles</strong>: all available template styles. </li>
+	<li>
+		<strong>option value</strong>: option style name and its default link color. </li>
+</ul>
+<br>
+<h3 class="yjsg-sub-heading">add new style name:</h3>
+<p>
+	We will now add new style name <code>green</code> to existing style names so our field name <code>yjsg_get_styles</code> changes to this;
+</p>
+<h3 class="yjsg-sub-heading">markup:</h3>
+[yjsgpre pretty="1" scroll="0"]
+<field name="yjsg_get_styles" type="yjsglist" default="blue|40b1e2" label="YJSG_COLOR_LABEL" description="YJSG_COLOR_DESC" yjsgstyles="blue==40b1e2|green==748500">
+	<option value="blue|40b1e2">Blue</option>
+	<option value="green|748500">Green</option>
+</field>
+[/yjsgpre] <br/>
+<p>
+	You new template style name should now be visible in template manager.
+</p>
+<br/>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/newstyle1.png" alt="newstyle1">
+	</span>
+</p>
+<br>
+<br>
+<h2> Step 2 - add new style images folder </h2>
+<p>
+	Please go to <code> site_root/templates/template_name/images</code> folder copy <code>blue</code> images folder and rename it to <code>green</code>.
+</p>
+<br/>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/newstyle2.png" alt="newstyle2">
+	</span>
+</p>
+<br>
+<h2> Step 3 - add and edit new stylesheet </h2>
+<p>
+	Since we already have stylesheets  for each style name please go to <code> site_root/templates/template_name/css</code> folder copy <code>blue.css</code> file name and rename it to <code>green.css</code>.
+</p>
+<br/>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/newstyle3.png" alt="newstyle3">
+	</span>
+</p>
+<br/>
+<p>
+	Open <code>green.css</code> and replace all instances of <code>images/blue</code> to <code>images/green</code> and all instances of color code <code>40b1e2</code> to <code>748500</code>.<br>
+	Note that some CSS properties like <code>a:hover</code> color property or specific background images need to be changed as well.<br/>
+	We will not go in to details for those but just note that you might need to change them in order to adapt your new template style.<br/>
+	Now go to template manager and set <code>Green</code> as your default template style. Hit save and go to your homepage:<br>
+</p>
+<br/>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/newstyle4.png" alt="newstyle4">
+	</span>
+</p>
+<br>
+<h3 class="yjsg-sub-heading">change and replace your logo:</h3>
+<p>
+	As you can see only thing left is changing your logo to fit your new style. Please open <code>logo.psd</code> and change it's color code.<br>
+	Now replace existing <code>logo.png</code> file name in <code>site_root/templates/template_name/images/green</code> folder with new logo;
+</p>
+<br/>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/newstyle5.png" alt="newstyle5">
+	</span>
+</p>
+<br>
+<p>
+	Go to your homepage and refresh. Your new logo should be visible.
+</p>
+<br/>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/newstyle6.png" alt="newstyle6">
+	</span>
+</p>
+<br>
+<p>
+	If logo process change is to complicated, you can upload new logo file within template manager. Go to tab name <b> Layout </b> and upload or select logo file from your server:
+</p>
+<br/>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/logo5.png" alt="logo5">
+	</span>
+</p>

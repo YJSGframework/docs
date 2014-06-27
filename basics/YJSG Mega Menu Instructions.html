@@ -1,1 +1,200 @@
-YJSG Mega Menu Instructions
+<p>
+	YJSG Template Framework comes with built in mega menu. This feature will help you create menu items groups or publish Joomla! modules within your menu items. After YJSG system plugin installation please got to <strong>Menus-&gt;ANY_MENU </strong>
+</p>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/megamenu1.png" alt="megamenu1">
+	</span>
+</p>
+<br>
+<p>
+	Select any menu item and click on tab Yjsg Mega Menu parameters.
+</p>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/megamenu2.png" alt="megamenu2">
+	</span>
+</p>
+<br>
+<div class="yjsg-hr-hrsolid fasmall fa fa-code"></div>
+<h2> Parameters explained</h2>
+<p>
+	Yjsg Mega Menu has 9 simple parameters which will help you setup your mega menu layout. Please read the parameters descriptions to understand the groups creation process.
+</p>
+<br>
+<table class="yjsg-table-bordered">
+	<thead>
+		<tr>
+			<th>Parameter name</th>
+			<th>Parameter Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Sub Title</td>
+			<td>Adds sub text under the menu item title</td>
+		</tr>
+		<tr>
+			<td>Act as group holder?</td>
+			<td>Define if this menu item should be group holder for its child items</td>
+		</tr>
+		<tr>
+			<td>Group holder width</td>
+			<td>Define the width of group holder. This should be total width of Sub groups widths combined. If you have 3 subgroups and each is 200px wide , your group holder width should be 600px wide. <span class="badge badge-important">Note:</span> do not include px, define width as 600.</td>
+		</tr>
+		<tr>
+			<td>Number of sub groups</td>
+			<td>This is the number of subgroups within group holder. Maximum is 5 but mostly used is 3.</td>
+		</tr>
+		<tr>
+			<td>Sub groups width</td>
+			<td>Here you can define the width of your sub groups. If left empty and you have 3 subgroups the groups holder width will be divided by 3 and each sub group will get that width. Example: 600 / 3 each sub group would be 200.<span class="badge badge-important">Note:</span> Add only 1 width declaration per line. Do not include px.</td>
+		</tr>
+		<tr>
+			<td>Menu item type</td>
+			<td>You can select what type of the item this would be . Module, module position, Normal link. If this item is a group holder please leave default value as Normal link.</td>
+		</tr>
+		<tr>
+			<td>Display link title, image and sub title if link type is module? </td>
+			<td>If set to <strong>NO</strong>, link title , link image and link description will not be displayed. This option is functional <span class="badge badge-important">ONLY</span> if link type is module or module position. This is useful if you like to show only module with its tile. For example Login Form</td>
+		</tr>
+		<tr>
+			<td>Select one or more module</td>
+			<td>Here you can select one or more modules to be displayed instead of the item link. If more the one module they will be displayed under each other starting with first selected.</td>
+		</tr>
+		<tr>
+			<td>Select one or more position</td>
+			<td>Here you can select one or more module positions to be displayed instead of the item link. If more the one module position they will be displayed under each other starting with first selected. <span class="badge badge-important">Note:</span> any module must be published in position you are looking for in order to be visible in this list. </td>
+		</tr>
+	</tbody>
+</table>
+<br>
+<div class="yjsg-hr-hrsolid fasmall fa fa-code"></div>
+<h2> Switching params on/off</h2>
+<br>
+<p class="lead">
+	For your convenience and not to get confused with parameters names we have added simple switch that will hide parameters that are not in use depending on what type of the link you would like to use
+</p>
+<h4>Default view </h4>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/megamenu3.png" alt="megamenu3">
+	</span>
+</p>
+<br>
+<h4>Act as group holder set to Yes </h4>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/megamenu3_1.png" alt="megamenu3_1">
+	</span>
+</p>
+<br>
+<h4>Menu item type module </h4>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/megamenu3_2.png" alt="megamenu3_2">
+	</span>
+</p>
+<br>
+<h4>Menu item type module position </h4>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/megamenu3_3.png" alt="megamenu3_3">
+	</span>
+</p>
+<div class="yjsg-hr-hrsolid fasmall fa fa-code"></div>
+<h2>Example setup</h2>
+<br>
+<p>
+	Follow these instructions to setup your first mega menu. The holder will contain 2 groups of 300px width each and 1 menu item in each group.
+</p>
+<h3> Step 1</h3>
+<p>
+	Go to your menu item ( we will use Home menu item  ) and add these settings in Yjsg Mega Menu Parameters tab:
+</p>
+<ul class="disc">
+<li> Set Sub title as anything you like. We used <strong>This is home</strong> .</li>
+<li> Set Act as group holder? to <strong>Yes</strong></li>
+<li> Set Group holder width  at <strong>600</strong></li>
+<li> Set Number of sub groups to <strong>2</strong></li>
+<li> Set Sub groups width<strong> 300</strong> one per line.</li>
+<li> Leave Menu item type at<strong> Normal link</strong></li>
+<p class="lead">
+	You should have something like this
+</p>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/megamenu4.png" alt="megamenu4">
+	</span>
+</p>
+<br>
+<h3> Step 2</h3>
+<ul class="disc">
+<li> Create 2 new menu items ( anything but separator ) and give them names as Group1 and Group2 .</li>
+<li> Set your group holder ( Home in our case ) as <strong>their parent</strong></li>
+<li> Create 2 more menu items, it can be any menu item type and set <strong>Group 1</strong> as <strong>parent</strong> for  the <strong>first</strong> and <strong>Group 2</strong> as <strong>parent</strong> for the <strong>second</strong> .</li>
+<p class="lead">
+	You should have this as your new mega menu
+</p>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/megamenu5.png" alt="megamenu5">
+	</span>
+</p>
+<div class="yjsg-hr-hrsolid fasmall fa fa-code"></div>
+<h2> Add module or module positions</h2>
+<p>
+	To demonstrate adding module or module positions to menu items we will use our newly created mega menu item and just change the<br/>
+	<strong>Menu item type</strong> for Group1 item and Group2 item to <strong>module</strong> and <strong>module position</strong>.
+</p>
+<h3> Step 1 adding module</h3>
+<ul class="disc">
+	<li> Go to your first child of Group 1 ( in our case Group1 item ) and change <strong>Menu item type</strong> to <strong>module</strong>. </li>
+	<li>From <strong>Select one or more module</strong> param choose <strong>Login Form</strong></li>
+	<li> Set <strong>Display link title, image and sub title if link type is module?</strong> to <strong>No</strong> and hit save.</li>
+</ul>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/megamenu6_1.png" alt="megamenu5">
+	</span>
+</p>
+<br>
+<p class="lead">
+	You should have your Login module displayed instead of the menu item.
+</p>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/megamenu6.png" alt="megamenu6">
+	</span>
+</p>
+<br>
+<h3> Step 2 adding module position</h3>
+<ul>
+	<li> Go to your first child of Group 2 ( in our case Group2 item ) and change <strong>Menu item type</strong> to <strong>module position</strong>.</li>
+	<li>From <strong>Select one or more module position</strong> param 	choose the module position you would like to display. </li>
+	<li> Set <strong>Display link title, image and sub title if link type is module?</strong> to <strong>No</strong> and hit save.</li>
+</ul>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/megamenu6_2.png" alt="megamenu5">
+	</span>
+</p>
+<br>
+<p class="lead">
+	You should have your module position displayed instead of the menu item.
+</p>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/megamenu7.png" alt="megamenu7">
+	</span>
+</p>

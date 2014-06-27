@@ -1,1 +1,33 @@
-Using Custom CSS file
+<p>
+	Every YJSG based template comes with <code>custom.css</code>. Custom.css is loaded as a very last file in header thus you have an option to override any CSS declaration from your template or extensions. We strongly encourage you to use this file to make any modification you might need.
+<br/>This way when there is a template update your overrides will still be in effect.
+</p>
+<p> Once you activate the custom.css in template manager, custom.css file will be placed in <code> site_root/templates/yjsg_template_name/css</code> folder.</p>
+<br/>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/customcss2.png" alt="customcss2">
+	</span>
+</p>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/customcss.png" alt="customcss">
+	</span>
+</p>
+<br/>
+[yjsgnote color="blue" close="no" title="Using custom.css for responsive add-ons" border="default" radius="radiusb5" icon="fa fa-info-circle fa-lg"]
+<p>
+Please use custom.css file for all your CSS overrides or add-ons even responsive layouts. See example below for responsive layouts override.
+</p>
+[/yjsgnote]
+<br/>
+<h3 class="yjsg-sub-heading">change module and article title font size on screens smaller than 980px:</h3>
+[yjsgpre pretty="1" scroll="0"]
+@media screen and (max-width: 979px){
+    .module_title,
+    .article_title{
+        font-size:50px;
+    }
+}
+[/yjsgpre]

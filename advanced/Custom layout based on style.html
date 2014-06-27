@@ -1,0 +1,21 @@
+<h2> Specific styling </h2>
+<p>
+	YJSG comes with additional body class name based on template style name. If you look at this page source code you will find <br>
+	<code>&lt;body id="stylefont" class="yjsgbody style_yjsg yjsgbr-chrome"&gt;</code> where <code>.style_yjsg</code> class name is specific for this template style.<br/>You can use this class to add specific styling to your elements.
+</p>
+<h2> Specific markup </h2>
+<p>
+	To test specific markup based on style name you can add this code to your <code>index.php</code> or <code>yjsg_custom_params.php</code> file:
+</p>
+<h3 class="yjsg-sub-heading">example:</h3>
+[yjsgpre pretty="1" scroll="0"]
+if($css_file == 'yjsg'){// change yjsg to your default style name
+	echo '<h1> My style name is '.$css_file.'</h1>';
+}
+[/yjsgpre] <br>
+<h3 class="yjsg-sub-heading">result:</h3>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/basedonstyle.png" alt="basedonstyle">
+	</span>
+</p>

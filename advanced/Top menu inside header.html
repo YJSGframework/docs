@@ -1,1 +1,59 @@
-Top menu inside header
+<p>
+	YJSG comes with the option to place the top menu next to the logo faster and easier.<br>
+	Go to template manager tab <b>Top Menu</b> and set parameter <b>Top menu location</b> to <b>In header</b> an hit save.
+</p>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/topmenu0.png" alt="topmenu0">
+	</span>
+</p>
+
+<p>
+	This option will move your menu from it's default position:
+</p>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/topmenu.png" alt="topmenu">
+	</span>
+</p>
+<br>
+<p>
+	next to your website logo:
+</p>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/topmenu1.png" alt="topmenu1">
+	</span>
+</p>
+<br>
+<p>
+To adjust your top menu position just add following code to <code> site_root/templates/yjsg_template_name/css/custom.css</code> file:
+</p>
+<h3 class="yjsg-sub-heading">example:</h3>
+[yjsgpre pretty="1" scroll="0"]
+#topmenu_holder{
+	margin-top:15px;
+}
+[/yjsgpre]
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/topmenu2.png" alt="topmenu2">
+	</span>
+</p>
+<br>
+If you wish to float your menu, just add float to <code>#top_menu</code> div id: <br>
+<h3 class="yjsg-sub-heading">example:</h3>
+[yjsgpre pretty="1" scroll="0"]
+#topmenu_holder{
+	margin-top:15px;
+    float:right;
+}
+[/yjsgpre]
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/topmenu3.png" alt="topmenu3">
+	</span>
+</p>

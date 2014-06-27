@@ -1,1 +1,121 @@
-Adding new modules grid
+<p>
+	In YJSG you can add additional <b>7</b> grids. Each grid can have <b>up to 5</b> modules. Please note that they all <b>must be named</b> as you see it in example below. Only changeable variable is the name of your module position. You can name your module positions aka. <code>modNames</code> located in <code>yjsg_print_grid_area</code> function  as you wish.
+</p>
+<h3 class="yjsg-sub-heading"> available grids: </h3>
+[yjsgpre pretty="1" scroll="0"]
+<?php yjsg_print_grid_area('yjsgName=newgrid1|modNames=anynameyoulike'); ?>
+<?php yjsg_print_grid_area('yjsgName=newgrid2|modNames=anynameyoulike'); ?>
+<?php yjsg_print_grid_area('yjsgName=newgrid3|modNames=anynameyoulike'); ?>
+<?php yjsg_print_grid_area('yjsgName=newgrid4|modNames=anynameyoulike'); ?>
+<?php yjsg_print_grid_area('yjsgName=newgrid5|modNames=anynameyoulike'); ?>
+<?php yjsg_print_grid_area('yjsgName=newgrid6|modNames=anynameyoulike'); ?>
+<?php yjsg_print_grid_area('yjsgName=newgrid7|modNames=anynameyoulike'); ?>
+[/yjsgpre]<br>
+<h2>Step 1 - Prepare the field</h2>
+<p>
+	You should first decide where to add your new grid position.  Open template <code>index.php</code> and try to find a suitable place for your new grid.<br />
+	For example under the main menu.
+</p>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/newgrid1.png" alt="newgrid1">
+	</span>
+</p>
+<h2>Step 2 - Add the code snippet in index.php</h2>
+Please add following code snippet in previously determined space: <br>
+<h3 class="yjsg-sub-heading">markup:</h3>
+[yjsgpre pretty="1" scroll="0"]
+<?php yjsg_print_grid_area('yjsgName=newgrid1|modNames=newposition',true); ?>
+[/yjsgpre]
+<p>
+	See information about
+	<a href="http://yjsimplegrid.com/documentation/advanced/using-grid-print-function.html" target="_blank">
+		Grid print function
+	</a>
+	for additional function options.
+</p>
+<h2>Step 3 - Add new module positions to your templateDetails.xml file</h2>
+Under this line in <code>templateDetails.xml</code> : <br>
+<h3 class="yjsg-sub-heading">markup:</h3>
+[yjsgpre pretty="1" scroll="0"]
+<position>user25</position>
+[/yjsgpre] <br>
+Add this xml snippet: <br>
+<h3 class="yjsg-sub-heading">markup:</h3>
+[yjsgpre pretty="1" scroll="0"]
+<position>newposition1</position>
+<position>newposition2</position>
+<position>newposition3</position>
+<position>newposition4</position>
+<position>newposition5</position>
+[/yjsgpre] <br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/newgrid2.png" alt="newgrid2">
+	</span>
+</p>
+<h2>Step 4 - Add new grid params to template-settings.xml</h2>
+Under this line in <code>template-settings.xml</code> : <br>
+<h3 class="yjsg-sub-heading">markup:</h3>
+[yjsgpre pretty="1" scroll="0"]
+<fields name="params" addfieldpath="/plugins/system/yjsg/elements">
+[/yjsgpre] <br>
+Add this xml snippet: <br>
+<h3 class="yjsg-sub-heading">markup:</h3>
+[yjsgpre pretty="1" scroll="0"]
+<fieldset name="YJSG_LAYOUT_LABEL">
+	<field name="yjsg_newgrid1_width" type="yjsgmultitext" default="20|20|20|20|20" labels="Newposition1|Newposition2|Newposition3|Newposition4|Newposition5" customchrome="YJsgxhtml|YJsgxhtml|YJsgxhtml|YJsgxhtml|YJsgxhtml" items="5" size="2" class="serialize_multiple" />
+</fieldset>
+[/yjsgpre] <br>
+<h3>Custom grid field explained:</h3>
+<ul>
+	<li>
+		<strong>name</strong>: variable that contains your new grid information. </li>
+	<li>
+		<strong>default</strong>: an array of default module widths. </li>
+	<li>
+		<strong>labels</strong>: visible positions names labels in template manager. </li>
+	<li>
+		<strong>customchrome</strong>: default module chrome. Can be <code>YJsgxhtml, YJsground, YJsgblank, YJsgtabs, YJsgaccordion, YJsgslides</code>. </li>
+	<li>
+		<strong>items</strong>: number of modules in the grid. </li>
+	<li>
+		<strong>size</strong>: width inputbox size. </li>
+	<li>
+		<strong>class</strong>: default grid class in template admin.<b>Do not change this</b>. </li>
+</ul>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/newgrid3.png" alt="newgrid3">
+	</span>
+</p>
+<br>
+<p>
+	Please note that new field name variable name="yjsg_<b>newgrid1</b>_width" must match the grid print function attribute <code>yjsgName=newgrid1</code>.<br>
+	Once you are done your new grid will be visible in template manager under tab <b>Layout</b>. Also note that the position of the grid in <code>index.php</code> will be replicated in your <b>Layout tab</b>. As you can see in our example the new grid is positioned under the main menu.
+</p>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/newgrid4.png" alt="newgrid4">
+	</span>
+</p>
+<h2>Step 5 - Publish your module in new module position</h2>
+<p>
+	Go to your desired module manager and publish the module in your new module position.
+</p>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/newgrid5.png" alt="newgrid5">
+	</span>
+</p>
+<br>
+<h3 class="yjsg-sub-heading">result:</h3>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/newgrid6.png" alt="newgrid6">
+	</span>
+</p>

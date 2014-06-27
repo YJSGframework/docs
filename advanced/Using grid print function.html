@@ -1,1 +1,91 @@
-Using grid print function
+<h2>Default grids functions:</h2>
+Your YJSG based template comes with 12 default grids and gives you the option to <strong>
+	<a href="http://yjsimplegrid.com/documentation/extend/adding-new-modules-grid-to-yjsg-based-template.html">
+		add more
+	</a>
+	</strong>. Here are the default grids and their modules positions names: <br>
+<br>
+[yjsgpre pretty="1" scroll="0"]
+------- Grid call function ---------------------- GRID NAME ------- MP START ------ MP END // MP = module position 
+yjsg_print_grid_area('yjsg1');-------------------| Grid 1 ---------- top1-----------top5
+yjsg_print_grid_area('yjsg2');-------------------| Grid 2 ---------- adv1-----------adv5
+yjsg_print_grid_area('yjsg3');-------------------| Grid 3 ---------- user1----------user5	
+yjsg_print_grid_area('yjsg4');-------------------| Grid 4 ---------- user6----------user10
+yjsg_print_grid_area('yjsg5');-------------------| Grid 5 ---------- user11---------user15
+yjsg_print_grid_area('yjsg6');-------------------| Grid 6 ---------- user16---------user20
+yjsg_print_grid_area('yjsg7');-------------------| Grid 7 ---------- user21---------user25
+yjsg_print_grid_area('yjsgheadergrid');----------| Header ---------- header1--------header3
+yjsg_print_grid_area('yjsgbodytop');-------------| MB Top ---------- bodytop1-------bodytop3	
+yjsg_print_grid_area('yjsgbodybottom');----------| MB Bottom ------- bodybottom1----bodybottom3
+yjsg_print_grid_area('toppanel');----------------| Top panel ------- tpan1----------tpan5
+yjsg_print_grid_area('botpanel');----------------| Bottom panel ---- bpan1----------bpan5
+[/yjsgpre]
+<br/>
+<h2>Grid function explained</h2>
+<div class="yjsg-example">Grid function has 4 attributes that u can use:<br>
+	[yjsgpre pretty="1" scroll="0"]
+	<?php yjsg_print_grid_area($yjsg_grid_name,$add_width=true,$before,$after);?>
+	[/yjsgpre] <br>
+	<br>
+	<ul>
+		<li><strong>$yjsg_grid_name</strong> - grid name as in yjsg1 | see complete list of grid names above.</li>
+		<li><strong>$add_width=true</strong> - will add class name <code>yjsgsitew</code> ( main site width class ) to the grid like: <code>
+			&lt;div id="yjsg1" class="yjsg_grid yjsgsitew" /&gt;.</code></li>
+		<li><strong>$before</strong> - anything you want before the grid including additional module positions,</li>
+		<li><strong>$after</strong> - closing of what you started in $before IF you did not close it already or anything you want to add AFTER the grid.</li>
+	</ul>
+</div>
+<br/>
+<h3 class="yjsg-sub-heading">grid function can be echoed or simply called:</h3>
+[yjsgpre pretty="1" scroll="0"]
+<?php yjsg_print_grid_area('yjsg1',NULL,NULL,NULL);?>//  just grid
+<?php yjsg_print_grid_area('yjsg1');?>//  just grid
+<?php yjsg_print_grid_area('yjsg1,$add_width=true');?>// grid and width defined
+<?php yjsg_print_grid_area('yjsg1,true');?>// grid and width defined
+<?php yjsg_print_grid_area('yjsg1',NULL,'<div id="before">,'</div>');?> // grid inside the before div 
+<?php yjsg_print_grid_area('yjsg1',false,'<div id="before">,'</div>');?>// grid inside the before div
+<?php yjsg_print_grid_area('yjsg1',$add_width=false,'<div id="before">,'</div>');?>// grid inside the before div
+[/yjsgpre]
+<br/>
+<h3 class="yjsg-sub-heading">using grid loaded hooks</h3>
+For easy check if specific grid is loaded ( present ) on the page , we have created simple <strong>
+	<a href="http://www.php.net/manual/en/language.types.boolean.php" target="_blank">
+		boolean
+	</a>
+	</strong>variables that you can use. Default is <code>FALSE</code>: <br>
+<br>
+[yjsgpre pretty="1" scroll="0"]
+$yjsg1_loaded----------------------------| top1-top5			
+$yjsg_header_loaded ---------------------| header1-header3		
+$yjsg2_loaded----------------------------| adv1-adv5	 				
+$yjsg3_loaded----------------------------| user1-user5					
+$yjsg_bodytop_loaded---------------------| bodytop1-bodytop3			
+$yjsg_bodybottom_loaded------------------| bodybootom1-bodybootom3	 	
+$yjsg4_loaded----------------------------| user6-user10					
+$yjsg5_loaded----------------------------| user11-user15					
+$yjsg6_loaded----------------------------| user16-user20	 				
+$yjsg7_loaded----------------------------| user21-user25
+$yjsgTopPanel_loaded---------------------| tpan1-tpan5
+$yjsgBotPanel_loaded---------------------| bpan1-bpan5	
+[/yjsgpre]
+<br>
+<h3 class="yjsg-sub-heading">HTML Grid Output</h3>
+[yjsgpre pretty="1" scroll="0"]
+<div id="GRID_NAME" class="yjsg_grid"> //GRID_NAME eq: yjsg1
+		<div id="MODULE_POSITION_NAME" class="yjsgxhtml"> //MODULE_POSITION_NAME eq: user1
+			<div class="yjsquare modid(MODULEID) + SUFFIX IF DEFINED IN MODULE SUFFIX">//MODULEID eq: modid28
+				<div class="h2_holder">
+					<h2 class="module_title"> 
+						+ <span class="fa fa-ICON_NAME"></span>// IF ICON IS USED eq: fa fa-glass
+						Module title... 
+					</h2>
+				</div>
+				<div class="yjsquare_in"> Module content ... </div>
+			</div>
+		</div>
+		-||-
+		-||-
+		-||-
+		-||- 
+</div>
+[/yjsgpre]

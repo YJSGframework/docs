@@ -1,1 +1,42 @@
-Using LESS Compiler
+<p>
+	Since YJSG comes with support for
+	<a href="http://twitter.github.com/bootstrap/" target="_blank">
+		Twitter Bootstrap
+	</a>
+	which is based on
+	<a href="http://lesscss.org/" target="_blank">
+		LESS CSS
+	</a>
+	, we included <code>lessphp</code> class by
+	<a href="http://lessphp.gpeasy.com/" target="_blank">
+		Gpeasy.com
+	</a>
+	that compiles your LESS CSS files in to one CSS file.
+</p>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/lesscompiler.png" alt="lesscompiler">
+	</span>
+</p>
+<br>
+<h2> LESS compiler settings</h2>
+<p>
+	There are 4 compiler settings that you can use in order to take advantage of lessphp class:
+</p>
+<h3 class="yjsg-sub-heading"> Select Bootstrap version: </h3>
+<p>
+	Here you can select which bootstrap version to use. You also turn Bootstrap off and use YJSG only which can tremendously speed up your website.
+</p>
+<h3 class="yjsg-sub-heading">Compile CSS files: </h3>
+<p>
+	Once you are done editing your website, set this ON so that all your CSS files get compressed into one stylesheet.
+</p>
+<h3 class="yjsg-sub-heading">Compress compiled CSS: </h3>
+<p>
+	If set to YES, this setting will compile and compress your generated CSS file and reduce the file size.
+</p>
+<h3 class="yjsg-sub-heading">Ajax Frontend Recompile:</h3>
+<p>
+	This setting is mostly used by developers to see immediate changes to CSS/LESS files while editing. If this setting is set to YES recompile process will run in background via AJAX and it will not slow down first page load. Note that after any LESS/CSS file change you would need to wait few seconds and the script will do "hard refresh" so you can see the changes. If this setting is set to NO first page load will be slow until files are recompiled but you will see changes immediately.
+</p>

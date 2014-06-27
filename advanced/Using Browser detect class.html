@@ -1,1 +1,54 @@
-Using Browser detect class
+<p>
+	YJSG comes with <code>YjsgBrowser</code> class which is a lightweight PHP class for detecting mobile devices browser name or browser version. 
+	You can test it by adding following code block to <code>yjsg_custom_params.php</code> file.
+</p>
+<br>
+<h3 class="yjsg-sub-heading">detect device or OS:</h3>
+[yjsgpre pretty="1" scroll="0"]
+if ($detect->isMobile()) {
+    echo 'I am mobile device';
+}
+// or YJSG variable 
+ 
+if ($yjsg_mobile)) {
+     echo 'I am mobile device';
+}
+// or 
+if($detect->isIphone()){
+	echo 'Hello my name is isIphone';
+}
+if($detect->isIpad()){
+	echo 'Hello my name is isIpad';
+}
+if($detect->isIpod()){
+	echo 'Hello my name is isIpod';
+}
+if($detect->isBlackBerry()){
+	echo 'Hello my name is isBlackBerry';
+}
+if($detect->isiOS()){
+	echo 'Hello my name is isiOS';
+}
+if($detect->isAndroidOS()){
+	echo 'Hello my name is isAndroidOS';
+}
+if($detect->isBlackBerryOS()){
+	echo 'Hello my name is isBlackBerryOS';
+}
+if($detect->isWinOS()){
+	echo 'Hello my name is isWinOS';
+}
+[/yjsgpre]
+<br/>
+<h3 class="yjsg-sub-heading">detect browser version:</h3>
+[yjsgpre pretty="1" scroll="0"]
+if($yjsgBrowser->Name == 'chrome'){
+	echo 'My name is ' . $yjsgBrowser->Name . ' and my version is ' . $yjsgBrowser->Version;
+}
+
+//or
+
+if($yjsgBrowser->Name == 'msie' &&  $yjsgBrowser->Version == '8.0'){
+	echo 'My name is IE8. I am an old browser';
+}
+[/yjsgpre]

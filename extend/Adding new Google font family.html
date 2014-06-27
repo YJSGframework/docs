@@ -1,1 +1,96 @@
-Adding new Google font family
+<h2>Simple approach</h2>
+<p>
+	In YJSG we have used very simple approach for implementing
+	<a href="http://www.google.com/webfonts" target="_blank">
+		<b>Google fonts</b>
+	</a>
+	. <br/>
+	This option will let you use all <span class="label label-success">600+</span> available font families in Google fonts library.
+</p>
+<h3 class="yjsg-sub-heading">example:</h3><br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/googlefont2.png" alt="googlefont2">
+	</span>
+</p>
+<br>
+<h2>Usage</h2>
+<p>
+	Go to your template manager, tab name <span class="label label-info">Style</span> and activate following parameters:
+</p>
+<ul>
+	<li>Use Element Tags font override set to <b>Yes</b></li>
+	<li>Element tag override type select <b> Google font</b></li>
+	<li>Google Font-Family leave as default or use this as example <code> Mouse+Memoirs|cursive|normal </code></li>
+	<li>In Affected Selectors textarea add the selectors that should use Google font-family defined above</li>
+</ul>
+<br/>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/googlefont.png" alt="googlefont">
+	</span>
+</p>
+<br>
+<h2>Google font param explained</h2>
+<p>
+	Google font param has 3 attributes that you can use and each of them needs to be separated by <code>|</code>:
+</p>
+<h3 class="yjsg-sub-heading">example:</h3>
+[yjsgpre pretty="1" scroll="0"]
+Mouse+Memoirs|cursive|normal
+[/yjsgpre] <br>
+<p>
+	First attribute is the actual font name taken directly from Google font stylesheet link,<span class="label label-info"> family= </span> ( including <span class="label label-info"> + </span>):
+</p>
+<h3 class="yjsg-sub-heading">example:</h3>
+[yjsgpre pretty="1" scroll="0"]
+http://fonts.googleapis.com/css?family=Mouse+Memoirs
+[/yjsgpre]
+<p>
+	Second attribute is general font-family like:
+</p>
+<ul>
+	<li>sans</li>
+	<li>sans-serif</li>
+	<li>cursive</li>
+	<li>fantasy</li>
+	<li>monospace</li>
+</ul>
+<p>
+	Second attribute can be combined:
+</p>
+<h3 class="yjsg-sub-heading">example:</h3>
+[yjsgpre pretty="1" scroll="0"]
+Mouse+Memoirs|'Helvetica',arial|normal
+Mouse+Memoirs|Helvetica,arial|normal
+[/yjsgpre]
+<p>
+	Third attribute is font-weight which you can define as:
+</p>
+<ul>
+	<li>bold</li>
+	<li>normal</li>
+	<li>500</li>
+	<li>700</li>
+</ul>
+<h3 class="yjsg-sub-heading">example:</h3>
+[yjsgpre pretty="1" scroll="0"]
+Mouse+Memoirs|cursive|normal
+Mouse+Memoirs|cursive|bold
+Mouse+Memoirs|cursive|700
+[/yjsgpre]<br/>
+<h2>Multiple fonts</h2>
+<p>
+	For stylesheet with multiple fonts, use double equal sign between font names. Note that additional font will be included in Google stylesheet but you would need to add affected selectors for additional font inside one of the template CSS files.
+</p>
+<h3 class="yjsg-sub-heading">example:</h3>
+[yjsgpre pretty="1" scroll="0"]
+Rock+Salt==Open+Sans:400,500
+[/yjsgpre]
+<h3 class="yjsg-sub-heading">in custom.css add :</h3>
+[yjsgpre pretty="1" scroll="0"]
+h2.my_class{
+font-family:Open Sans,sans-serif;
+font-weight:300;
+}
+[/yjsgpre]

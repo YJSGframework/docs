@@ -1,1 +1,73 @@
-Adding custom Javascript
+<p>
+	There are several ways to include your custom Javascript code in to Joomla. In this tutorial we will explain how to use them and which one is better depending on the code that you like to include.
+</p>
+<h2>Trough template manager</h2>
+<p>
+	YJSG template administration comes with <b>Custom code</b> tab that you can use to add your custom javascript snippets to template head or footer.
+</p>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/add_javascrip_template_manager.png" alt="add_javascrip_template_manager">
+	</span>
+</p>
+<h2>Using JDocument</h2>
+<p>
+	In joomla you can use
+	<a href="http://docs.joomla.org/JDocument" target="_blank">
+		JDocument
+	</a>
+	class to add custom Javascript files or block of Javascript code in <code>head</code> section of your template.<br>
+	This first example shows how to add custom Javascript file in YJSG based template.<br>
+	For your convenience you can use file name <code>yjsg_custom_params.php</code> to add any custom files or code blocks. <br>
+	This file is located in <code>site_root/template/yjsg_template_name/custom/</code> folder.
+</p>
+<br>
+<h3>Adding custom Javascript file via JDocument/addScript</h3>
+<p>
+	First move your Javascript file to <code>site_root/template/yjsg_template_name/src/</code> folder , open <code>yjsg_custom_params.php</code> and add this line.
+</p>
+<h3 class="yjsg-sub-heading">example:</h3>
+[yjsgpre pretty="1" scroll="0"]
+$document->addScript($yj_site.'src/my_new_js_file.js');
+[/yjsgpre] <br>
+<h3>Adding custom file via $YjsgCustomJS array</h3>
+<p>
+	This option is specific to YJSG based templates only and is used to load your Javascript file after all template scripts and Joomla Javascript library files have loaded.<br>
+	To use <code>$YjsgCustomJS</code> first move your Javascript file to <code>site_root/template/yjsg_template_name/src/</code> folder , open <code>yjsg_custom_params.php</code> and add this line.
+</p>
+<h3 class="yjsg-sub-heading">example:</h3>
+[yjsgpre pretty="1" scroll="0"]
+$YjsgCustomJS	= array();
+$YjsgCustomJS[] = $yj_site.'src/my_new_js_file.js';
+[/yjsgpre]
+<p>
+	To add multiple files add this line in <code>yjsg_custom_params.php</code>
+</p>
+<h3 class="yjsg-sub-heading">example:</h3>
+[yjsgpre pretty="1" scroll="0"]
+$YjsgCustomJS	= array();
+$YjsgCustomJS[] = $yj_site.'src/my_new_js_file.js';
+$YjsgCustomJS[] = $yj_site.'src/my_new_js_file2.js';
+[/yjsgpre] <br>
+<h3>Adding block of Javascript in head with JDocument/addScriptDeclaration</h3>
+<p>
+	To add block of Javascript code, open <code>yjsg_custom_params.php</code> and add this line
+</p>
+<h3 class="yjsg-sub-heading">example:</h3>
+[yjsgpre pretty="1" scroll="0"]
+$document->addScriptDeclaration("
+	var myVar = 'myValue';
+");
+[/yjsgpre] <br>
+<h3>Adding block of Javascript in head with $yjsg_js variable</h3>
+<p>
+	One advantage of <code>$yjsg_js</code> variable use is that is loading your Javascript block code at the bottom of your page instead of the head. This way the code blocs are not clogging up your page load plus is much better for your website SEO. For better performance and cleaner head tags <code>$yjsg_js</code> is echoed at the end of the page in <code>layouts/yjsg_footer.php</code>. Usage is very simple and it is similar to <code>JDocument/addScriptDeclaration</code>.<br>
+	Just add following line to <code>yjsg_custom_params.php</code> file.
+</p>
+<h3 class="yjsg-sub-heading">example:</h3>
+[yjsgpre pretty="1" scroll="0"]
+$yjsg_js.="var myVar ='my_js_var;'";
+[/yjsgpre] <br>
+<span class="yjt_label yjtb_yellow">Warning:</span>
+<b>don't forget the dot before the <code>=</code> operator.</b>

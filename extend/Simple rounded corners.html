@@ -1,1 +1,58 @@
-Simple rounded corners
+<p>
+	To slim down the markup and make rounded corners faster and easier to understand we have used simple CSS class <code>.addround</code><br />
+	with default <code>5px</code> border radius.
+</p>
+<h3 class="yjsg-sub-heading">example:</h3>
+[yjsgpre pretty="1" scroll="0"]
+.addround {
+-webkit-border-radius:5px;
+-khtml-border-radius:5px;
+-moz-border-radius:5px;
+border-radius:5px;
+border:1px solid #999;
+margin:5px;
+}
+[/yjsgpre]<br/>
+<p>
+	To activate rounded corners for your module just go in template manager, tab <b>Layout</b> hover over the module position,<br />
+	click on top left icon, select <b>Round</b> and hit save.<br/>
+	<br />
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/roundedcorners.png" alt="roundedcorners">
+	</span>
+</p>
+<br>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/roundedcorners2.png" alt="roundedcorners2">
+	</span>
+</p>
+<br>
+<p>
+	With small CSS change  you can turn your default rounded corners in to this:
+</p>
+<h3 class="yjsg-sub-heading">example:</h3>
+[yjsgpre pretty="1" scroll="0"]
+.addround{
+background: #40b1e2;
+border:none;
+box-shadow:inset 0px -100px 100px #329dcc;
+color:#fff;
+}
+.addround .module_title,
+.addround a{
+color:#fff;
+}
+.addround a:hover,
+.addround a:focus{
+color:#121212;
+}
+[/yjsgpre] <br>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/roundedcorners3.png" alt="roundedcorners2">
+	</span>
+</p>

@@ -1,1 +1,101 @@
-Activate sliding panels
+<h2> Slide me some content </h2>
+<p>
+	All YJSG based templates come with 3 sliding panels that you can use to populate your content. Sliding panels are completely responsive and are visible on all devices. Their locations are:
+</p>
+<ul>
+	<li> Page top above header - contains 5 modules grid  with module positions names <span class="yjt_label yjtb_green">tpan1 - tpan5</span></li>
+	<li> Page bottom below footer - contains 5 modules grid <span class="yjt_label yjtb_green">bpan1 - bpan5</span>
+	</li>
+	<li> Page left side - contains 1 module position with name <span class="yjt_label yjtb_green">sidepanel</span></li>
+</ul>
+<br>
+<h3> Top Panel </h3>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/slidingpanels2.png" alt="slidingpanels2">
+	</span>
+</p>
+<br>
+<h3> Bottom Panel </h3>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/slidingpanels3.png" alt="slidingpanels3">
+	</span>
+</p>
+<br>
+<h3> Side Panel </h3>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/slidingpanels4.png" alt="slidingpanels4">
+	</span>
+</p>
+<br>
+<h2> Panels settings </h2>
+<p>
+	Panels can  be activated all at once or individually. To activate sliding panel just publish your module in any of module positions mentioned above. Panels settings including the width adjustments for modules in top and bottom panel, can be found in template manger<br/>under the tab name <b> Layout </b>.
+</p>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/slidingpanels1.png" alt="slidingpanels1">
+	</span>
+</p>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/slidingpanels1_1.png" alt="slidingpanels1_1">
+	</span>
+</p>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/slidingpanels1_2.png" alt="slidingpanels1_2">
+	</span>
+</p>
+<br>
+<h2> Panels styling </h2>
+<p>
+	Panels are very easy to style and they do not contain any images. <br>
+	Default panels style is located in <code> site_root/templates/yjsg_based_template/css/yjsg_layout.css </code>.<br>
+	Panels default background color is white but it can be changed with few simple CSS rules.
+</p>
+<br>
+[yjsgpre pretty="1" scroll="0"]
+
+/* top panel container */
+#yjsg_toppanel_slide {
+background:#0ebcd1;
+color:#fff;
+border-bottom:1px solid #098594;
+}
+/* top panel open/close button */
+#yjsg_toppanel_open {
+background:#0ebcd1;
+color:#000;
+border:1px solid #098594;
+}
+/* side panel container */
+#yjsg_sidepanel_slide{
+}
+/* side panel open/close button */
+#yjsg_sidepanel_open{
+}
+/* bottom panel container */
+#yjsg_botpanel_slide{
+}
+/* bottom panel open/close button */
+#yjsg_botpanel_open{
+}
+[/yjsgpre] <br>
+<p>
+	The above code would result in following top panel style
+</p>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/slidingpanels5.png" alt="slidingpanels5">
+	</span>
+</p>

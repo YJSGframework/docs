@@ -1,1 +1,80 @@
-Using Custom params file
+<p>
+	YJSG based templates come with <code> yjsg_custom_params.php</code> file which is a magic bullet for all developers. This file is located in <code>site_root/templates/yjsg_template/custom/</code> folder and it "sees" all template parameters, functions and settings which gives you the power to override them. It is very easy to make your own conditions and have your template act on them.
+</p>
+<br>
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="images/docs/customparams.png" alt="customparams">
+	</span>
+</p>
+<br>
+For your convenience here is the list of few custom parameters you can override and control trough <code>yjsg_custom_params.php</code> file: <br>
+<br>
+[yjsgpre pretty="1" scroll="0"]
+
+-- JOOMLA DOCUMENT TYPE EXAMPLES --
+  $document = &JFactory::getDocument();
+  $document->addStyleSheet(JURI::base() . 'location/css/style.css');
+  $document->addScript('');
+  $document->addScriptDeclaration("jQuery.noConflict();");
+  $document->addCustomTag('');
+  $document->addScriptDeclaration("");
+//////////////////////////// 
+////////////////////////////   
+-- IF STATEMENTS VARS --
+$text_direction == 1------------------------| RTL is on
+$topmenu_off == 2 || $itemid == 0 ----------| Top menu is on 
+$selectors_override ==1 --------------------| Selectors override is on -  css , google font , cufon , squirrel
+$selectors_override_type -------------------| 1 = CSS | 2 = Google | 3 = @font-face
+$default_menu_style ------------------------| 1 = YJ Mega CSSDropdown | 2 = YJ Mega SMoothDropdown | 
+--------------------------------------------| 3 = YJ Mega SMoothDropline | 4 = YJ Mega CSSDropline | 5= Split Menu
+--------------------------------------------| 6 = Module position topmenupoz
+$responsive_on == 1 ------------------------| yjresponsive.css and yjresponsive.js are loaded
+$yjsg_mobile -------------------------------| all mobile devices   use as    if($yjsg_mobile) do something
+$midblock_off ------------------------------| <jdoc:include type="component"  /> and surrounding divs are disabled.
+--------------------------------------------| use as   if(!$midblock_off) mid block is ON do what I need
+//////////////////////////// 
+//////////////////////////// 
+--GRID LOADED CHECK--
+check if grid is loaded with these variables. Default is false. 
+Description is advising what module positions the grid contains
+ 
+$yjsg1_loaded----------------------------| top1-top5
+$yjsg_header_loaded ---------------------| header1-header3
+$yjsg2_loaded----------------------------| adv1-adv5 
+$yjsg3_loaded----------------------------| user1-user5
+$yjsg_bodytop_loaded---------------------| bodytop1-bodytop3
+$yjsg_bodybottom_loaded------------------| bodybootom1-bodybootom3 
+$yjsg4_loaded----------------------------| user6-user10
+$yjsg5_loaded----------------------------| user11-user15
+$yjsg6_loaded----------------------------| user16-user20 
+$yjsg7_loaded----------------------------| user21-user25
+$yjsgTopPanel_loaded---------------------| tpan1-tpan5
+$yjsgBotPanel_loaded---------------------| bpan1-bpan5
+//////////////////////////// 
+//////////////////////////// 
+-- CUSTOM JS --
+ use var name  $yjsg_js .= 
+ Example:
+ $yjsg_js.="var myVar ='my_js_var;'";
+ // note
+ dont forget the dot before = operator
+ For better performance and cleaner head tags
+ $yjsg_js is echoed at the end of the page in layouts/yjsg_footer.php
+   
+//////////////////////////// 
+//////////////////////////// 
+-- CUSTOM COLOR STYLING --
+ 
+custom color styling based on link color. use $cc_color ( custom color css ) variable to declare css properties
+use if($css_file == 'gray'){} for specific stylesheets
+//////////////////////////// 
+$yjsg_color->darker('10%') makes the color 10% darker based on the link color
+$yjsg_color->lighter('10%') makes the color  10% lighter based on the link color
+//////////////////////////// 
+use those 2 methods to make auto colors based on percentage
+Use this example to see result. Just add below $cc_css:
+//////////////////////////// 
+$cc_css.="a.readon{background:".$style_color.";}";
+$cc_css.=".button,.validate,a.readon:hover{background:".$yjsg_color->darker('10%').";}";
+[/yjsgpre]
