@@ -1,9 +1,9 @@
 <p>
-We know how difficult it can be for you to style element based on browser or to find a matching properties that match all browsers. To ease your pain and make it easier for all of us, YJSG comes with custom body class name based on the browser name. Sure we have tough of all IE versions and as always they have to have a "special" class name for them. If you look at this page source code you will find something like:
+We know how difficult it can be for you to style element based on browser or to find a matching properties that match all browsers. To ease your pain and make it easier for all of us, YJSG comes with custom body class name based on the browser name. Sure we have tough of all IE versions and as always they have to have a "special" class name for them. If you look at this page source code you will find special class name attached to body tag:
 </p>
 <h3 class="yjsg-sub-heading">example:</h3>
 [yjsgpre pretty="1" scroll="0"]
-<body id="stylefont" class="style_blue yjsgbr-chrome">
+class="style_blue yjsgbr-chrome"
 [/yjsgpre] <br>
 <p>
 	As you can see there is class name <code>.yjsgbr-chrome</code> attached to the body class that will help you style your website based on this class. In case of all IE browser versions the class name changes to <code>.yjsgbr-msie80</code> or <code>.yjsgbr-msie90</code>, thus giving you the option to target properties based on IE browser versions. For example , if you have an issue with a div class <code>.my_bad_div</code> in IE8 you can add something like this in <code>custom.css</code> file:
