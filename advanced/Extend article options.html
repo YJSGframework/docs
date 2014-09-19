@@ -1,16 +1,59 @@
 <p>
-YJSG v2 is completely modular and gives you a chance to extend each part of it as well as Joomla article options. If you look in <code>site_root/templates/eximium/custom/yjsgarticle/</code> folder you will find file name <code>yjsg_article.xml</code>.
-</p><br/>
+	YJSG v2 is completely modular and gives you a chance to extend each part of it as well as Joomla article options. If you look in <code>site_root/templates/eximium/custom/yjsgarticle/</code> folder you will find file name <code>yjsg_article.xml</code>.
+</p>
+<br/>
 <p class="yjsgcenter">
 	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
 	<img src="images/docs/yjsgarticle0.png" alt="yjsgarticle0">
 	</span>
 </p>
 <p>
-We have placed one custom parameter inside as an example. You can use this file to add any additional options that you might need for your articles.
+	We have placed one custom parameter inside as an example. You can use this file to add any additional options that you might need for your articles.
 </p>
 <p class="yjsgcenter">
 	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
 	<img src="images/docs/yjsgarticle.png" alt="yjsgarticle">
+	</span>
+</p>
+<br />
+<p>
+	To see this article parameter in action copy the html override from <code>plugins/system/yjsg/includes/html/com_content/article/default.php</code>
+	<br />
+	to <code>templates/eximium/html/com_content/article/</code> folder.
+</p>
+[yjsgnote color="red" close="no" title="Note" border="default" radius="0" icon="fa fa-exclamation-triangle"]
+Please note that if you are using a template that was released prior to Yjsg v2, you would need to copy the file located in <code>plugins/system/yjsg/legacy/html/com_content/article/</code> folder.
+[/yjsgnote] <br />
+<p>
+	Open the newly copied file and after the first php closing <code>?></code> add this snippet.
+</p>
+<h3 class="yjsg-sub-heading">snippet:</h3>
+[yjsgpre pretty="1" scroll="0"] <?php echo  $params->get('yjsg_custom_article_param') ?> [/yjsgpre] <br />
+<p>
+	Now go to your article view page and you will se the parameter output.
+</p>
+<br />
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="http://yjsimplegrid.com/images/docs/yjsgarticle2.png" alt="yjsgarticle2">
+	</span>
+</p>
+<h3>
+View Yjsg Article Options tab in frontpage article edit view
+</h2>
+<p>
+	Yjsg Article Options tab is by default set to be visible only in administrator article manager. To see these optons tab in frontend please go to
+	your template manager , tab <b>Advanced options</b> and set the parameter <b>Show extra article options to?</b> to desired user groups.
+</p>
+<br />
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="http://yjsimplegrid.com/images/docs/yjsgarticle3.png" alt="yjsgarticle3">
+	</span>
+</p>
+<br />
+<p class="yjsgcenter">
+	<span class="yjt_imgs bthin radiusb8 bspace yjt_none">
+	<img src="http://yjsimplegrid.com/images/docs/yjsgarticle4.png" alt="yjsgarticle4">
 	</span>
 </p>
